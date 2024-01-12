@@ -17,8 +17,8 @@ export const menu = [
     group: "USER",
     child: [
       {
-        label: "Product",
-        path: PATH.product,
+        label: "Home",
+        path: PATH.landing,
       },
     ],
   },

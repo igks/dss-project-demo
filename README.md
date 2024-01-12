@@ -11,3 +11,14 @@
 #### RUNNING
 
 1. execute npm run dev
+
+## SPA
+
+#### SETUP
+
+1. go to spa directory
+2. execute npm install
+
+#### RUNNING
+
+1. execute npm run dev

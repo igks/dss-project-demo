@@ -4,8 +4,13 @@ import Category from "../pages/admin/category";
 import FormCategory from "../pages/admin/category/FormCategory";
 import Product from "../pages/admin/product";
 import FormProduct from "../pages/admin/product/FormProduct";
+import LandingPage from "../pages/user/LandingPage";
 
 const routes = [
+  {
+    path: PATH.landing,
+    element: <LandingPage />,
+  },
   {
     path: PATH.category,
     element: <Category />,
