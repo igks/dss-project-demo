@@ -5,16 +5,16 @@ import {
   BodyWrapper,
   SecondaryButton,
   PrimaryButton,
-} from "../../components/commons/styled.component";
-import { PATH } from "../../constants/path";
+} from "../../../components/commons/styled.component";
+import { PATH } from "../../../constants/path";
 import { Controller, useForm } from "react-hook-form";
 import { TextField } from "@mui/material";
-import { getError } from "../../helpers/common";
+import { getError } from "../../../helpers/common";
 import {
   useCreateCategoryMutation,
   useLazyGetCategoryQuery,
   useUpdateCategoryMutation,
-} from "../../data/services/category";
+} from "../../../data/services/category";
 import { useEffect } from "react";
 
 const FormCategory = () => {

@@ -49,4 +49,8 @@ export const SideGroupTitle = styled.div`
 export const SideLink = styled.div`
   padding: 5px 30px;
   cursor: pointer;
+  &:hover {
+    z-index: 10;
+    color: #348feb;
+  }
 `;

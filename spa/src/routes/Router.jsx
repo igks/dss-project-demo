@@ -1,7 +1,9 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import { PATH } from "../constants/path";
-import Category from "../pages/category";
-import FormCategory from "../pages/category/FormCategory";
+import Category from "../pages/admin/category";
+import FormCategory from "../pages/admin/category/FormCategory";
+import Product from "../pages/admin/product";
+import FormProduct from "../pages/admin/product/FormProduct";
 
 const routes = [
   {
@@ -14,7 +16,11 @@ const routes = [
   },
   {
     path: PATH.product,
-    element: <Category />,
+    element: <Product />,
+  },
+  {
+    path: PATH.form_product,
+    element: <FormProduct />,
   },
 ];
 

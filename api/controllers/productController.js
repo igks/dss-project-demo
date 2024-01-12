@@ -1,6 +1,6 @@
 const { getErrors } = require("../helpers/common");
 const { sequelize } = require("../models");
-const { Product, CategoryProduct } = require("../models");
+const { Product, CategoryProduct, Category } = require("../models");
 const { validateProduct } = require("../validations/productValidation");
 
 async function getAll(req, res) {
@@ -15,7 +15,7 @@ async function getAll(req, res) {
 async function getById(req, res) {
   const { id } = req.params;
   try {
-    const product = await Product.findByPk(id);
+    const product = await Product.findByPk(id, { include: [Category] });
     if (product == null) {
       return res.NotFound();
     }
