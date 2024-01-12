@@ -1,7 +1,7 @@
 const request = require("supertest");
 const app = require("../app");
 const { User } = require("../models");
-const { userMock } = require("../mocks");
+const { userMock } = require("../__mocks__");
 const bcrypt = require("bcryptjs");
 
 describe("User end point test suites", () => {
