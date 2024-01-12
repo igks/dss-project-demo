@@ -38,7 +38,7 @@ export const categoryApi = coreApi.injectEndpoints({
     }),
     deleteCategory: builder.mutation({
       query: (id) => ({
-        url: `category${id}`,
+        url: `category/${id}`,
         method: "DELETE",
       }),
       invalidatesTags: [categories, category],

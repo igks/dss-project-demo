@@ -1,4 +1,5 @@
 export const PATH = {
-  category: "category",
-  product: "product",
+  category: "/category",
+  form_category: "/form-category",
+  product: "/product",
 };
