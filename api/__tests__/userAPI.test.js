@@ -33,18 +33,21 @@ describe("User end point test suites", () => {
       expect(JSON.parse(res.text).message).toBe("Email already exist!.");
     });
 
-    it("should failed if validation failed", async () => {
-      const mockCreate = jest.fn(() => userMock);
-      jest.spyOn(User, "findOne").mockResolvedValue(null);
-      jest.spyOn(User, "create").mockImplementation(() => mockCreate);
+    it.each(["", "123", "123456789", "aaaaBBBB"])(
+      "should failed if validation failed",
+      async (pwd) => {
+        const mockCreate = jest.fn(() => userMock);
+        jest.spyOn(User, "findOne").mockResolvedValue(null);
+        jest.spyOn(User, "create").mockImplementation(() => mockCreate);
 
-      const res = await request(app).post("/user/register").send({
-        email: "user@mail.com",
-        password: "1234567",
-      });
-      expect(res.statusCode).toBe(400);
-      expect(JSON.parse(res.text).message).toBe("Data validation failed!");
-    });
+        const res = await request(app).post("/user/register").send({
+          email: "user@mail.com",
+          password: pwd,
+        });
+        expect(res.statusCode).toBe(400);
+        expect(JSON.parse(res.text).message).toBe("Data validation failed!");
+      }
+    );
 
     it("should return 500 for unhandled error", async () => {
       jest.spyOn(User, "findOne").mockImplementation(() => {
@@ -68,7 +71,7 @@ describe("User end point test suites", () => {
       jest.spyOn(bcrypt, "compareSync").mockImplementation(() => true);
       jest.spyOn(User, "findOne").mockResolvedValue({
         ...userMock,
-        attempt: 0,
+        attempt: 1,
         lockUntil: null,
       });
       jest.spyOn(User, "update").mockImplementation(() => jest.fn());

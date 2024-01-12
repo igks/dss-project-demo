@@ -29,18 +29,17 @@ async function getById(req, res) {
 }
 
 async function create(req, res) {
-  const productValidation = await validateProduct(req.body);
-  if (productValidation !== true) {
-    const errors = getErrors(productValidation);
-    return res.BadRequest({
-      message: "Validation failed!",
-      errors,
-    });
-  }
-
-  const { name, price, imageUrl, categories } = req.body;
-
   try {
+    const productValidation = await validateProduct(req.body);
+    if (productValidation !== true) {
+      const errors = getErrors(productValidation);
+      return res.BadRequest({
+        message: "Validation failed!",
+        errors,
+      });
+    }
+
+    const { name, price, imageUrl, categories } = req.body;
     await sequelize.transaction(async (transaction) => {
       const product = await Product.create(
         { name, price, imageUrl },

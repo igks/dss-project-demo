@@ -15,7 +15,7 @@ function composeResponse() {
       });
     };
 
-    res.Unauthorized = (payload = {}) => {
+    res.Unauthorized = (payload) => {
       res.status(401).json({
         success: false,
         message: "Unauthorized user!",

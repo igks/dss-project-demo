@@ -13,4 +13,32 @@ const categoryReqMock = {
   name: "category name",
 };
 
-module.exports = { userMock, categoryMock, categoryReqMock };
+const productMock = {
+  id: 1,
+  name: "product name",
+  price: 1000,
+  imageUrl: "image url mock",
+  categories: [1, 2],
+};
+
+const productReqMock = {
+  name: "product name",
+  price: 1000,
+  imageUrl: "image url mock",
+  categories: [1],
+};
+
+const categoryProductMock = {
+  id: 1,
+  categoryId: 1,
+  productId: 1,
+};
+
+module.exports = {
+  userMock,
+  categoryMock,
+  categoryReqMock,
+  productMock,
+  productReqMock,
+  categoryProductMock,
+};

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon server.js",
-    "test": "npx jest --no-cache --verbose --watchAll"
+    "test": "npx jest --no-cache --verbose"
   },
   "keywords": [],
   "author": "I Gusti Kade Sugiantara",
