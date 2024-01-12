@@ -1,4 +1,3 @@
-import React from "react";
 import { NavContainer } from "./styled.component";
 
 const NavBar = () => {

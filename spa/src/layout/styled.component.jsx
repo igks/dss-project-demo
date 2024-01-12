@@ -8,7 +8,7 @@ export const MainContainer = styled.div`
 
 export const SideContainer = styled.div`
   grid-area: side;
-  background-color: #6a6c6e;
+  background-color: #424b54;
 `;
 
 export const NavContainer = styled.div`
@@ -20,11 +20,13 @@ export const NavContainer = styled.div`
   padding-left: 20px;
   font-size: 24px;
   font-weight: bold;
+  color: white;
 `;
 
 export const BodyContainer = styled.div`
   grid-area: body;
-  background-color: #d7dce0;
+  background-color: #dedfe0;
+  color: #232424;
 `;
 
 export const SideTitle = styled.div`
@@ -35,4 +37,16 @@ export const SideTitle = styled.div`
   font-size: 18px;
   font-weight: 500;
   border-bottom: 2px solid #ddd;
+  margin-bottom: 50px;
+`;
+
+export const SideGroupTitle = styled.div`
+  padding: 10px 20px;
+  margin-top: 30px;
+  border-bottom: 1px solid #aaa;
+`;
+
+export const SideLink = styled.div`
+  padding: 5px 30px;
+  cursor: pointer;
 `;
