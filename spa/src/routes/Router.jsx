@@ -32,16 +32,13 @@ const routes = [
 const AppRouter = () => {
   return (
     <Routes>
-      <Route index element={<Category />} />
+      <Route index element={<LandingPage />} />
 
       {routes.map((route) => (
         <Route key={route.path} {...route} />
       ))}
 
-      <Route
-        path="*"
-        element={<Navigate to={PATH.category} replace={true} />}
-      />
+      <Route path="*" element={<Navigate to={PATH.landing} replace={true} />} />
     </Routes>
   );
 };

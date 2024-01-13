@@ -7,7 +7,7 @@ export const productApi = coreApi.injectEndpoints({
   endpoints: (builder) => ({
     getProducts: builder.query({
       query: (params) => ({
-        url: "product",
+        url: "/product",
         method: "GET",
         params,
       }),
@@ -15,14 +15,14 @@ export const productApi = coreApi.injectEndpoints({
     }),
     getProduct: builder.query({
       query: (id) => ({
-        url: `product/${id}`,
+        url: `/product/${id}`,
         method: "GET",
       }),
       providesTags: [product],
     }),
     createProduct: builder.mutation({
       query: (data) => ({
-        url: "product",
+        url: "/product",
         method: "POST",
         body: data,
       }),
@@ -30,7 +30,7 @@ export const productApi = coreApi.injectEndpoints({
     }),
     updateProduct: builder.mutation({
       query: ({ id, ...body }) => ({
-        url: `product/${id}`,
+        url: `/product/${id}`,
         method: "PUT",
         body: body,
       }),
@@ -38,7 +38,7 @@ export const productApi = coreApi.injectEndpoints({
     }),
     deleteProduct: builder.mutation({
       query: (id) => ({
-        url: `product/${id}`,
+        url: `/product/${id}`,
         method: "DELETE",
       }),
       invalidatesTags: [product, products],
@@ -47,7 +47,6 @@ export const productApi = coreApi.injectEndpoints({
 });
 
 export const {
-  useGetProductQuery,
   useGetProductsQuery,
   useLazyGetProductQuery,
   useCreateProductMutation,

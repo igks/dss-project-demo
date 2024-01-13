@@ -39,7 +39,7 @@ const Product = () => {
   const deleteHandler = async (id) => {
     if (window.confirm("Do you want to delete the record?")) {
       const res = await deleteProduct(id).unwrap();
-      alert(res.message);
+      window.alert(res.message);
     }
   };
 

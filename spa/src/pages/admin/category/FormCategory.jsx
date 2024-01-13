@@ -36,7 +36,6 @@ const FormCategory = () => {
       name: "",
     },
   });
-
   const onSubmit = async (data) => {
     let res;
     if (navId) {
@@ -46,10 +45,10 @@ const FormCategory = () => {
     }
 
     if (res.success) {
-      alert(res.message);
+      window.alert(res.message);
       navigate(PATH.category);
     } else {
-      alert(res.message);
+      window.alert(res.message);
     }
   };
 
@@ -60,7 +59,7 @@ const FormCategory = () => {
         name: res.data.name,
       });
     } else {
-      alert(res.message);
+      window.alert(res.message);
     }
   };
 
@@ -68,13 +67,15 @@ const FormCategory = () => {
     if (navId) {
       loadCategory(navId);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [navId]);
 
   return (
     <BodyWrapper>
       <Row>
-        <ContentTitle>Form Category</ContentTitle>
+        <ContentTitle data-testid="form-title">Form Category</ContentTitle>
         <SecondaryButton
+          data-testid="back-button"
           style={{ marginLeft: 30 }}
           onClick={() => navigate(PATH.category)}
         >
@@ -88,6 +89,7 @@ const FormCategory = () => {
           rules={{ required: "Field is required!" }}
           render={({ field }) => (
             <TextField
+              inputProps={{ "data-testid": "input-name" }}
               label="Category Name"
               variant="standard"
               sx={{ width: "50%" }}
@@ -98,7 +100,11 @@ const FormCategory = () => {
           )}
         />
       </Row>
-      <PrimaryButton style={{ marginTop: 30 }} onClick={handleSubmit(onSubmit)}>
+      <PrimaryButton
+        data-testid="save-button"
+        style={{ marginTop: 30 }}
+        onClick={handleSubmit(onSubmit)}
+      >
         SAVE
       </PrimaryButton>
     </BodyWrapper>

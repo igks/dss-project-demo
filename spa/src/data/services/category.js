@@ -7,7 +7,7 @@ export const categoryApi = coreApi.injectEndpoints({
   endpoints: (builder) => ({
     getCategories: builder.query({
       query: (params) => ({
-        url: "category",
+        url: "/category",
         method: "GET",
         params,
       }),
@@ -15,14 +15,14 @@ export const categoryApi = coreApi.injectEndpoints({
     }),
     getCategory: builder.query({
       query: (id) => ({
-        url: `category/${id}`,
+        url: `/category/${id}`,
         method: "GET",
       }),
       providesTags: [category],
     }),
     createCategory: builder.mutation({
       query: (data) => ({
-        url: "category",
+        url: "/category",
         method: "POST",
         body: data,
       }),
@@ -30,7 +30,7 @@ export const categoryApi = coreApi.injectEndpoints({
     }),
     updateCategory: builder.mutation({
       query: ({ id, ...body }) => ({
-        url: `category/${id}`,
+        url: `/category/${id}`,
         method: "PUT",
         body: body,
       }),
@@ -38,7 +38,7 @@ export const categoryApi = coreApi.injectEndpoints({
     }),
     deleteCategory: builder.mutation({
       query: (id) => ({
-        url: `category/${id}`,
+        url: `/category/${id}`,
         method: "DELETE",
       }),
       invalidatesTags: [categories, category],
@@ -48,7 +48,6 @@ export const categoryApi = coreApi.injectEndpoints({
 
 export const {
   useGetCategoriesQuery,
-  useGetCategoryQuery,
   useLazyGetCategoryQuery,
   useCreateCategoryMutation,
   useUpdateCategoryMutation,

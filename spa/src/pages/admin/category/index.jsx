@@ -39,7 +39,7 @@ const Category = () => {
   const deleteHandler = async (id) => {
     if (window.confirm("Do you want to delete the record?")) {
       const res = await deleteCategory(id).unwrap();
-      alert(res.message);
+      window.alert(res.message);
     }
   };
 
@@ -88,12 +88,16 @@ const Category = () => {
                   <TableCell>{row.name}</TableCell>
                   <TableCell>
                     <EditButton
+                      data-testid="edit-button"
                       style={{ marginRight: 20 }}
                       onClick={() => editHandler(row.id)}
                     >
                       edit
                     </EditButton>
-                    <DeleteButton onClick={() => deleteHandler(row.id)}>
+                    <DeleteButton
+                      data-testid="delete-button"
+                      onClick={() => deleteHandler(row.id)}
+                    >
                       delete
                     </DeleteButton>
                   </TableCell>

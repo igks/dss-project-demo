@@ -12,6 +12,10 @@
 
 1. execute npm run dev
 
+#### TEST
+
+1. execute npm run test
+
 ## SPA
 
 #### SETUP
@@ -21,4 +25,8 @@
 
 #### RUNNING
 
-1. execute npm run dev
+1. execute npm start
+
+#### TEST
+
+1. execute npm run test

@@ -1,8 +1,8 @@
 export const getError = (obj, key) => {
   let status = false;
   let message = " ";
-  Object.keys(obj).map((k) => {
-    if (k == key) {
+  Object.keys(obj).forEach((k) => {
+    if (k === key) {
       status = true;
       message = obj[key]["message"];
     }

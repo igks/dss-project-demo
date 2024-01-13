@@ -65,10 +65,10 @@ const FormProduct = () => {
     }
 
     if (res.success) {
-      alert(res.message);
+      window.alert(res.message);
       navigate(PATH.product);
     } else {
-      alert(res.message);
+      window.alert(res.message);
     }
   };
 
@@ -85,7 +85,7 @@ const FormProduct = () => {
         categories: existingCategories,
       });
     } else {
-      alert(res.message);
+      window.alert(res.message);
     }
   };
 
@@ -105,6 +105,7 @@ const FormProduct = () => {
     if (navId) {
       loadProduct(navId);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [navId]);
 
   return (
