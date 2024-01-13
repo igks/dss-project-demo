@@ -1,5 +1,5 @@
 import { render, screen, waitFor } from "@testing-library/react";
-import TestWrapper from "../../../../__tests__/Wrapper";
+import TestWrapper from "../../../../helpers/TestWrapper";
 import Category from "..";
 
 describe("Category table test suites", () => {

@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import TestWrapper from "../../__tests__/Wrapper";
+import TestWrapper from "../../helpers/TestWrapper";
 import Layout from "..";
 
 const mockUseNavigate = jest.fn();
