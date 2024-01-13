@@ -1,7 +1,7 @@
 import { NavContainer } from "./styled.component";
 
 const NavBar = () => {
-  return <NavContainer>DSS Project Demo</NavContainer>;
+  return <NavContainer data-testid="nav-bar">DSS Project Demo</NavContainer>;
 };
 
 export default NavBar;

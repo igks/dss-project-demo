@@ -9,6 +9,7 @@ export const MainContainer = styled.div`
 export const SideContainer = styled.div`
   grid-area: side;
   background-color: #424b54;
+  color: white;
 `;
 
 export const NavContainer = styled.div`

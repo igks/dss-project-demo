@@ -4,7 +4,7 @@ import { getTags } from "./tags";
 export const coreApi = createApi({
   reducerPath: "coreApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: `http://localhost:3000/`,
+    baseUrl: process.env.REACT_APP_DOMAIN_SERVICE,
   }),
   endpoints: () => ({}),
   tagTypes: [...getTags()],

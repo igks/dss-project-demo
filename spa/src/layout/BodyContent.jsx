@@ -4,7 +4,7 @@ import Router from "./../routes/Router";
 
 const BodyContent = () => {
   return (
-    <BodyContainer>
+    <BodyContainer data-testid="body-content-container">
       <NavBar />
       <Router />
     </BodyContainer>

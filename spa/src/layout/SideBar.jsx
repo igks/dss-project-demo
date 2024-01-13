@@ -16,13 +16,19 @@ const SideBar = () => {
   };
 
   return (
-    <SideContainer>
-      <SideTitle>Navigation</SideTitle>
+    <SideContainer data-testid="side-nav-container">
+      <SideTitle data-testid="side-nav-title">Navigation</SideTitle>
       {menu.map((m) => (
         <Fragment key={m.group}>
-          <SideGroupTitle>{m.group}</SideGroupTitle>
+          <SideGroupTitle data-testid="side-nav-group-title">
+            {m.group}
+          </SideGroupTitle>
           {m.child.map((c) => (
-            <SideLink key={c.label} onClick={() => navigateTo(c.path)}>
+            <SideLink
+              data-testid="side-nav-link"
+              key={c.label}
+              onClick={() => navigateTo(c.path)}
+            >
               {c.label}
             </SideLink>
           ))}

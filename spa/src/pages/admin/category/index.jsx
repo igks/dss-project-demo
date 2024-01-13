@@ -37,25 +37,38 @@ const Category = () => {
   };
 
   const deleteHandler = async (id) => {
-    if (confirm("Do you want to delete the record?")) {
+    if (window.confirm("Do you want to delete the record?")) {
       const res = await deleteCategory(id).unwrap();
       alert(res.message);
     }
   };
 
-  if (isLoading) return <div>Loading</div>;
+  if (isLoading) return <div data-testid="loading-state">Loading</div>;
 
   return (
     <BodyWrapper>
       <Row>
-        <ContentTitle style={{ marginRight: 30 }}>List Category</ContentTitle>
-        <PrimaryButton onClick={addNewHandler}>Add New</PrimaryButton>
+        <ContentTitle data-testid="category-title" style={{ marginRight: 30 }}>
+          List Category
+        </ContentTitle>
+        <PrimaryButton
+          data-testid="category-add-new-button"
+          onClick={addNewHandler}
+        >
+          Add New
+        </PrimaryButton>
       </Row>
       {res.data.length === 0 ? (
-        <Typography>No Data Available, Please add some record.</Typography>
+        <Typography data-testid="no-data-info">
+          No Data Available, Please add some record.
+        </Typography>
       ) : (
         <TableContainer component={Paper}>
-          <Table sx={{ minWidth: 100 }} aria-label="simple table">
+          <Table
+            data-testid="category-table"
+            sx={{ minWidth: 100 }}
+            aria-label="simple table"
+          >
             <TableHead>
               <TableRow>
                 <TableCell>No.</TableCell>
